@@ -1,9 +1,9 @@
-import { Story, InkList } from './engine/Story'
+import { Story, InkList } from "./engine/Story";
 
 declare interface Inkjs {
-    Story: typeof Story
-    InkList: typeof InkList
+  Story: typeof Story;
+  InkList: typeof InkList;
 }
 
-declare let inkjs: Inkjs
-export = inkjs
+declare let inkjs: Inkjs;
+export = inkjs;
