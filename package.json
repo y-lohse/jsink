@@ -5,7 +5,7 @@
   "main": "dist/ink-es2015.js",
   "types": "ink.d.ts",
   "scripts": {
-    "test": "npm run-script test:typescript && npm run-script test:javascript",
+    "test": "npm run test:typescript && npm run test:javascript",
     "test:typescript": "jest",
     "test:javascript": "npm run-script test:javascript:dist && npm run-script test:javascript:legacy",
     "test:javascript:dist": "cross-env INK_TEST=dist jest",
@@ -16,7 +16,7 @@
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "watch": "tsc -p ./ && rollup -c -w",
-    "prepublishOnly": "tsc -p ./ && rollup -c"
+    "prepare": "npm run build"
   },
   "author": "Yannick Lohse",
   "license": "MIT",
