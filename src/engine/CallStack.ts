@@ -1,13 +1,11 @@
 import { PushPopType } from "./PushPop";
 import { Path } from "./Path";
 import { Story } from "./Story";
-import { StoryException } from "./StoryException";
 import { JsonSerialisation } from "./JsonSerialisation";
 import { ListValue } from "./Value";
 import { StringBuilder } from "./StringBuilder";
 import { Pointer } from "./Pointer";
 import { InkObject } from "./Object";
-import { Container } from "./Container";
 import { Debug } from "./Debug";
 import { tryGetValueFromMap } from "./TryGetResult";
 import { throwNullException } from "./NullException";
@@ -308,7 +306,8 @@ export namespace CallStack {
         this.inExpressionEvaluation
       );
       copy.temporaryVariables = new Map(this.temporaryVariables);
-      copy.evaluationStackHeightWhenPushed = this.evaluationStackHeightWhenPushed;
+      copy.evaluationStackHeightWhenPushed =
+        this.evaluationStackHeightWhenPushed;
       copy.functionStartInOutputStream = this.functionStartInOutputStream;
       return copy;
     }
@@ -379,9 +378,8 @@ export namespace CallStack {
 
           let temps = jElementObj["temp"];
           if (typeof temps !== "undefined") {
-            el.temporaryVariables = JsonSerialisation.JObjectToDictionaryRuntimeObjs(
-              temps
-            );
+            el.temporaryVariables =
+              JsonSerialisation.JObjectToDictionaryRuntimeObjs(temps);
           } else {
             el.temporaryVariables.clear();
           }

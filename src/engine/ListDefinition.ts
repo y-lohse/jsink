@@ -1,5 +1,4 @@
-import { InkList, InkListItem, SerializedInkListItem } from "./InkList";
-import { ListValue } from "./Value";
+import { InkListItem, SerializedInkListItem } from "./InkList";
 import { TryGetResult } from "./TryGetResult";
 
 export class ListDefinition {
@@ -59,7 +58,7 @@ export class ListDefinition {
   }
   public TryGetValueForItem(
     item: InkListItem,
-    /* out */ intVal: number
+    /* out */ _intVal: number
   ): TryGetResult<number> {
     if (!item.itemName) return { result: 0, exists: false };
     let value = this._itemNameToValues.get(item.itemName);
