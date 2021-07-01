@@ -36,7 +36,7 @@
     "fs-extra": "9.1.0",
     "glob": "7.1.7",
     "jest": "26.6.3",
-    "prettier": "2.2.1",
+    "prettier": "2.3.2",
     "remap-istanbul": "0.13.0",
     "rollup": "2.52.4",
     "@rollup/plugin-babel": "5.3.0",
